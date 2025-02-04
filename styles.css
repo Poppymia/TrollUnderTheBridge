@@ -1,0 +1,63 @@
+body {
+    /*80% sky, 20% ground*/
+    background: linear-gradient(to bottom, #ade8f4 80%, #582f0e 20%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    text-align: center;
+}
+
+.bridge img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.troll img {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 500px;
+}
+
+.player img {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    right: 500px;
+}
+
+.riddle-box {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.answer-buttons {
+    margin-top: 10px;
+}
+
+.answer {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.answer:hover {
+    background-color: #45a049;
+}
