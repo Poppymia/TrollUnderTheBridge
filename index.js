@@ -10,7 +10,7 @@ const riddles = [
   ["Don't be fooled; it isn't thunder. Staying put would be a blunder.", "Stampede", "Horses", "Earthquake", "Arrows"], 
   ["Need a hand? Well, you just wait. We'll lend a hand; we each have eight.", "Spiders", "Octopuses", "Roaches", "Ants"], 
   ["", "", "", "", ""]
-  // Add more riddles as needed
+  // Add more riddles as needed 
 ];
 
 buttons.forEach(button => {
