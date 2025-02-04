@@ -1,6 +1,6 @@
 body {
     /*80% sky, 20% ground*/
-    background: linear-gradient(to bottom, #ade8f4 80%, #582f0e 20%); 
+    background: linear-gradient(to bottom, #ade8f4 60%, #583b22 20%); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@ body {
 .game-container {
     position: relative;
     width: 600px;
-    height: 400px;
+    height: 500px;
     text-align: center;
 }
 
@@ -39,8 +39,7 @@ body {
     position: absolute;
     top: 20px;
     width: 100%;
-    
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); 
     padding: 10px;
     border-radius: 10px;
 }
