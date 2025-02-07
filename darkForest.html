@@ -8,6 +8,11 @@
   </head>
 
   <body>
+    <div class="lives-container">
+      <img src="https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png" class="heart" id="heart1" />
+      <img src="https://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png" class="heart" id="heart2" />
+    </div>
+    
     <div class="game-container">
       <div class="troll">
         <img
@@ -34,6 +39,15 @@
         </div>
       </div>
     </div>
-    <script src="js/darkForest.js"></script>
+
+    <script type="module">
+      import { updateHearts } from "./gameUtility.js";  
+    
+      let lives = sessionStorage.getItem("lives") ? parseInt(sessionStorage.getItem("lives")) : 2;
+      updateHearts(lives);
+    </script>
+    
+
+    <script src="js/darkForest.js" type="module"></script>
   </body>
 </html>

@@ -1,12 +1,30 @@
+import { updateHearts } from "./gameUtility.js";
+
 const riddleText = document.getElementById("riddle-text");
 const buttons = document.querySelectorAll(".answer");
 
+//track lives and level with session objects
+//start at the default
+let lives = sessionStorage.getItem("lives") ? parseInt(sessionStorage.getItem("lives")) : 2;
+updateHearts(lives);
+
+//hardcoded for loop for checking what user clicks
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.textContent === "Egg") {
-      window.location.href = "darkForest.html"; // Redirects to DarkForest.html
+      window.location.href = "darkForest.html"; //redirects to DarkForest.html
     } else {
-      window.location.href = "gameOver.html";
+      //take a life away
+      lives--;
+      sessionStorage.setItem("lives", lives);
+      updateHearts(lives);
+
+      if (lives > 0) {
+        window.location.href = "darkForest.html";
+      }
+      else {
+        window.location.href = "gameOver.html";
+      }
     }
   });
 });
@@ -114,3 +132,4 @@ const riddles = [
   ["", "", "", "", ""],
   // Add more riddles as needed
 ];
+
