@@ -12,11 +12,62 @@ export function updateHearts(lives) {
   } else if (lives === 0) {
     heart1.style.display = "none";
 
-    //reset the lives in case of starting over
-    //sessionStorage.clear();
+    // Play rock, paper, scissors mini-game
+    playMiniGame();
+  }
+}
 
-    //redirect user to game over screen
+function playMiniGame() {
+  const userChoice = prompt("Choose rock, paper, or scissors:");
+  const choices = ["rock", "paper", "scissors"];
+  const trollChoice = choices[Math.floor(Math.random() * choices.length)];
+
+  alert(`Troll chose: ${trollChoice}`);
+
+  if (userChoice === trollChoice) {
+    alert("It's a tie! Try again.");
+    playMiniGame();
+  } else if (
+    (userChoice === "rock" && trollChoice === "scissors") ||
+    (userChoice === "paper" && trollChoice === "rock") ||
+    (userChoice === "scissors" && trollChoice === "paper")
+  ) {
+    alert("You win! Choose your reward:");
+    chooseReward();
+  } else {
+    alert("You lose! Game over.");
     window.location.href = "gameOver.html";
+  }
+}
+
+function chooseReward() {
+  const reward = prompt(
+    "Choose your reward:\n1. Get one life and return to the level you lost at\n2. Get both lives but start from the beginning\n3. 1 in 10 chance of winning the whole game"
+  );
+
+  switch (reward) {
+    case "1":
+      sessionStorage.setItem("lives", 1);
+      // Logic to return to the level they lost at
+      break;
+    case "2":
+      sessionStorage.setItem("lives", 2);
+      // Logic to start from the beginning
+      window.location.href = "index.html";
+      break;
+    case "3":
+      if (Math.random() < 0.1) {
+        alert("Congratulations! You won the whole game!");
+        window.location.href = "success.html";
+      } else {
+        alert("Sorry, you didn't win. Game over.");
+        window.location.href = "gameOver.html";
+      }
+      break;
+    default: // Invalid choice
+      alert("Invalid choice. Game over.");
+      window.location.href = "gameOver.html";
+      break;
   }
 }
 
