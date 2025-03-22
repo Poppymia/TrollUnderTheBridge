@@ -12,7 +12,7 @@ export function updateHearts(lives) {
   } else if (lives === 0) {
     heart1.style.display = "none";
 
-    // Play rock, paper, scissors mini-game
+    //call the rock, paper, scissors mini-game
     playMiniGame();
   }
 }
@@ -48,11 +48,11 @@ function chooseReward() {
   switch (reward) {
     case "1":
       sessionStorage.setItem("lives", 1);
-      // Logic to return to the level they lost at
+      // logic to return to the level they lost at
       break;
     case "2":
       sessionStorage.setItem("lives", 2);
-      // Logic to start from the beginning
+      // logic to start from the beginning
       window.location.href = "index.html";
       break;
     case "3":
@@ -64,7 +64,7 @@ function chooseReward() {
         window.location.href = "gameOver.html";
       }
       break;
-    default: // Invalid choice
+    default: // invalid choice
       alert("Invalid choice. Game over.");
       window.location.href = "gameOver.html";
       break;
